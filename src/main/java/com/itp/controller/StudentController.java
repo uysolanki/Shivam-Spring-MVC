@@ -16,7 +16,7 @@ import com.itp.model.Student;
 import com.itp.service.StudentService;
 
 @Controller
-public class HelloController {
+public class StudentController {
 
 	@Autowired
 	StudentService studentService;
@@ -27,7 +27,7 @@ public class HelloController {
 		return "new-shivam";
 	}
 	
-	@RequestMapping(value={"/","/hello","/index","/home"})
+	@RequestMapping(value={"/hello","/index","/home"})
 	public String home(Model model)
 	{
 		List<Student> studentList=studentService.studentList();
@@ -43,7 +43,7 @@ public class HelloController {
 		return "single-student";
 	}
 	
-	@GetMapping("/StudentList")
+	@GetMapping("/")
 	public String StudentList(Model model)
 	{
 		List<Student> studentList=studentService.studentList();
@@ -74,17 +74,15 @@ public class HelloController {
 	@RequestMapping("/addStudentForm")
 	public String addStudentForm(Model model)
 	{
-		Student s1=new Student();
+		Student s1=new Student(77,"Shivam",98.7);
 		model.addAttribute("student",s1);
 		return "add-student";
 	}
 	
 	@PostMapping("/saveStudentDetails")
-	public String saveStudentDetails(@ModelAttribute Student s1,Model model)
+	public String saveStudentDetails(@ModelAttribute Student s1) throws Exception
 	{
-		model.addAttribute("studname",s1.getSname());
-		System.out.println(s1);
-		//return "confirm";
-		return "redirect:/StudentList";
+		studentService.addStudent(s1);
+		return "redirect:/";
 	}
 }

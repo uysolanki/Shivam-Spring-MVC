@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+<a href="addStudentForm">Add Student</a>
 <h1>Student List</h1>
     <table>
         <thead>
