@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to My FanPage</h1>
-<a href="addStudentForm">Add New Student</a>
+<h3>Roll Number  : ${mystudent.rno}</h3>
+<h3>Name  :${mystudent.sname}</h3>
+<h3>Percentage : ${mystudent.per}</h3>
 </body>
 </html>

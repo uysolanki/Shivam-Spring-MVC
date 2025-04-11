@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome to My FanPage</h1>
-<a href="addStudentForm">Add New Student</a>
+<h1> Record Added for Student ${studname}</h1>
 </body>
 </html>
